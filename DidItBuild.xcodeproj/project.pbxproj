@@ -173,6 +173,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 756410D0177DBC9700B2B938 /* Build configuration list for PBXNativeTarget "DidItBuild" */;
 			buildPhases = (
+				752BB436177DD45D0011F100 /* Run mogenerator */,
 				4C0F7B2198DB48418AE85C86 /* Check Pods Manifest.lock */,
 				75641098177DBC9700B2B938 /* Sources */,
 				75641099177DBC9700B2B938 /* Frameworks */,
@@ -313,6 +314,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+		};
+		752BB436177DD45D0011F100 /* Run mogenerator */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run mogenerator";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/zsh;
+			shellScript = "# Update the mogenerator files\ncd ${SOURCE_ROOT}/${PROJECT_NAME}\nmogenerator --template-var arc=true -m ${PROJECT_NAME}.xcdatamodeld -M CoreData/Machine -H CoreData/Human";
 		};
 		756410BD177DBC9700B2B938 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
