@@ -200,6 +200,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 756410D0177DBC9700B2B938 /* Build configuration list for PBXNativeTarget "DidItBuild" */;
 			buildPhases = (
+				752BB436177DD45D0011F100 /* Run mogenerator */,
 				4C0F7B2198DB48418AE85C86 /* Check Pods Manifest.lock */,
 				752BB436177DD45D0011F100 /* Run mogenerator */,
 				75641098177DBC9700B2B938 /* Sources */,
